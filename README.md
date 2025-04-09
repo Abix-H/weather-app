@@ -22,6 +22,6 @@ A simple Flask-based web application that allows users to get weather informatio
 4. Run the app:
 - Start the Flask application by running this command:
   ```
-  python app.py
+  python main.py
   ```
 - The app will be accessible at `http://127.0.0.1:5000/` in your browser.
