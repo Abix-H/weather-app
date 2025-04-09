@@ -4,18 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    {% comment %} <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}?v=2">
+    <script src="{{ url_for('static', filename='script.js') }}?v=2"></script> {% endcomment %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}?v=1.0">
+    <script src="{{ url_for('static', filename='script.js') }}?v=1.0"></script>
+
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: rgb(84, 69, 69);
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+        }
+    </style>
+    
 </head>
 <body>
     <div class="container">
-        <h1>Weather App</h1>
+        <h1>Weather Applica</h1>
         <div class="input-section">
             <input type="text" id="city-name" placeholder="Enter city name">
             <button onclick="getWeather()">Get Weather</button>
         </div>
-        <div id="weather-info" class="weather-info">
-            <!-- Weather info will be displayed here -->
+        
+        <!-- Weather info will be displayed here -->
+        <div id="weather-info" class="weather-info" style="display: none;">
+            <p id="temp"></p>
+            <p id="humidity"></p>
+            <p id="condition"></p>
         </div>
     </div>
 </body>
