@@ -4,32 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    {% comment %} <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}?v=2">
-    <script src="{{ url_for('static', filename='script.js') }}?v=2"></script> {% endcomment %}
+
+    <!-- Link to the stylesheet and script with versioning -->
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}?v=1.0">
     <script src="{{ url_for('static', filename='script.js') }}?v=1.0"></script>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
     <style>
         body {
             background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: rgb(84, 69, 69);
+            font-family: Arial, sans-serif;
         }
         .container {
             background: rgba(0, 0, 0, 0.6);
+            margin: 50px auto;
+            padding: 30px;
+            max-width: 500px;
+            border-radius: 12px;
+            color: white;
+        }
+        .input-section {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+        }
+        button {
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: none;
+            background-color: #ffa500;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .weather-info p {
+            margin: 5px 0;
         }
     </style>
-    
 </head>
 <body>
     <div class="container">
-        <h1>Weather Applica</h1>
+        <h1>Weather App</h1> <!-- Fixed typo here -->
         <div class="input-section">
             <input type="text" id="city-name" placeholder="Enter city name">
-            <button onclick="getWeather()">Get Weather</button>
+            <button id="get-weather">Get Weather</button>
         </div>
-        
-        <!-- Weather info will be displayed here -->
+
         <div id="weather-info" class="weather-info" style="display: none;">
             <p id="temp"></p>
             <p id="humidity"></p>

@@ -52,6 +52,7 @@ button {
     color: white;
     font-size: 1rem;
     cursor: pointer;
+    z-index: 10;  /* Ensure it's above other elements */
 }
 
 button:hover {
