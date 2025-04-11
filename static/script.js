@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const getWeatherBtn = document.getElementById('get-weather');  // Button to trigger the weather fetch
     const cityInput = document.getElementById('city-name');  // Input field for the city name
-    const weatherInfoDiv = document.getElementById('weather-info');  // Div where weather info will be displayed
+    const weatherInfoDiv = document.getElementById('weather-info');  // where weather info will be displayed
     function getWeather() {
         const city = document.getElementById('city-name').value;
         
