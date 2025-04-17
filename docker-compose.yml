@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  weather:
+    build: ./weather-service
+    ports:
+      - "5001:5001"
+    environment:
+      - API_KEY=${API_KEY}
+      - HISTORY_SERVICE_URL=http://history:5004/log
+    depends_on:
+      - history
+
+  csv-export:
+    build: ./csv-export-service
+    ports:
+      - "5002:5002"
+    environment:
+      - HISTORY_SERVICE_URL=http://history:5004/history
+    depends_on:
+      - history
+
+  history:
+    build: ./weather-history-service
+    ports:
+      - "5004:5004"
+
