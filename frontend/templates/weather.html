@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather for {{ city }}</title>
+</head>
+<body>
+    <h2>Weather in {{ city }}</h2>
+    <p><a href="/">Back</a></p>
+    {% if data.weather %}
+        <p>{{ data.weather[0].description }}</p>
+        <p>Temperature: {{ data.main.temp }} °C</p>
+        <p>Humidity: {{ data.main.humidity }}%</p>
+    {% else %}
+        <p>Error fetching weather data</p>
+    {% endif %}
+</body>
+</html>
