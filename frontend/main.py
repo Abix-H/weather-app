@@ -39,7 +39,7 @@ def weather():
         return "City is required", 400
 
     try:
-        res = requests.get(f"http://weather_service:5001/api/weather?city={city}")
+        res = requests.get(f"http://weather:5001/api/weather?city={city}")
         data = res.json()
         return render_template('weather.html', data=data, city=city, user=session['user'])
     except Exception as e:

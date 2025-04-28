@@ -23,5 +23,23 @@ services:
   history:
     build: ./weather-history-service
     ports:
-      - "5004:5004"
+      - "5004:5004" 
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - weather
+      - user-service
+
+  user-service:
+    build: ./user_service
+    ports:
+      - "5003:5003"
+
+  notification-service:
+    build: ./notification_service
+    ports:
+      - "5005:5005"
 
