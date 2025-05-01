@@ -14,7 +14,7 @@ services:
   csv-export:
     build: ./csv-export-service
     ports:
-      - "5002:5002"
+      - "5003:5003"
     environment:
       - HISTORY_SERVICE_URL=http://history:5004/history
     depends_on:
@@ -36,7 +36,7 @@ services:
   user-service:
     build: ./user_service
     ports:
-      - "5003:5003"
+      - "5002:5002"
 
   notification-service:
     build: ./notification_service

@@ -12,14 +12,14 @@ def index():
 def register():
     username = request.form.get('username')
     password = request.form.get('password')
-    res = requests.post("http://user_service:5002/register", json={"username": username, "password": password})
+    res = requests.post("http://user-service:5002/register", json={"username": username, "password": password})
     return redirect(url_for('index'))
 
 @app.route('/login', methods=['POST'])
 def login():
     username = request.form.get('username')
     password = request.form.get('password')
-    res = requests.post("http://user_service:5002/login", json={"username": username, "password": password})
+    res = requests.post("http://user-service:5002/login", json={"username": username, "password": password})
     if res.status_code == 200:
         session['user'] = username
     return redirect(url_for('index'))
@@ -39,8 +39,9 @@ def weather():
         return "City is required", 400
 
     try:
-        res = requests.get(f"http://weather:5001/api/weather?city={city}")
+        res = requests.get(f"http://weather:5001/get_weather?city={city}")
         data = res.json()
+        print(f"Weather data for {city}: {data}")  # Debug print
         return render_template('weather.html', data=data, city=city, user=session['user'])
     except Exception as e:
         return f"Error: {str(e)}", 500

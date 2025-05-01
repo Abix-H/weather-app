@@ -6,10 +6,10 @@
 <body>
     <h2>Weather in {{ city }}</h2>
     <p><a href="/">Back</a></p>
-    {% if data.weather %}
-        <p>{{ data.weather[0].description }}</p>
-        <p>Temperature: {{ data.main.temp }} °C</p>
-        <p>Humidity: {{ data.main.humidity }}%</p>
+    {% if data%}
+        <p>{{ data.description }}</p>
+        <p>Temperature: {{ data.temperature_celsius }} °C</p>
+        <p>Humidity: {{ data.humidity}}%</p>
     {% else %}
         <p>Error fetching weather data</p>
     {% endif %}

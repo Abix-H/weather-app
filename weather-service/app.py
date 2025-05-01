@@ -36,17 +36,6 @@ def get_weather():
         'timestamp': datetime.utcnow().isoformat()
     }
 
-
-    # Send alert if temperature is extreme
-    # if celsius_temp > 35 or celsius_temp < -10:
-    #     try:
-    #         requests.post(f"{alert_service_url}/send_alert", json={
-    #             "city": city,
-    #             "temp": celsius_temp,
-    #             "description": weather_data['description']
-    #         })
-    #     except:
-    #         pass  # You can log this
     try:
         history_service_url = os.getenv("HISTORY_SERVICE_URL", "http://history:5004/log")
         payload = {
