@@ -5,20 +5,19 @@ import os
 
 # Initialize the Flask app
 app = Flask(__name__)
-print(f"Test 1")
+# print(f"Test 1")
 # Load environment variables from .env file
 load_dotenv()
-print(f"Test 2")
-# Optional: serve static files (CSS/JS)
+# print(f"Test 2")
 @app.route('/static/<path:filename>')
 def static_files(filename):
     return send_from_directory('static', filename, cache_timeout=0)
-print(f"Test 3")
+# print(f"Test 3")
 # Home route
 @app.route('/')
 def home():
     return render_template('index.html')
-print(f"Test 4")
+# print(f"Test 4")
 # Get weather data route
 @app.route('/get_weather', methods=['GET'])
 def get_weather():
@@ -58,9 +57,10 @@ def get_weather():
         'clouds': data['clouds']['all']
     }
 
-    print(f"Temperature in Kelvin: {kelvin_temp}")
-    print(f"Converted to Celsius: {celsius_temp}")
-    print(f"Converted to Fahrenheit: {fahrenheit_temp}")
+    print(f"Temperature in Kelvin: {kelvin_temp}") # Debug print
+    print(f"Converted to Celsius: {celsius_temp}") # Debg print
+    print(f"Converted to Fahrenheit: {fahrenheit_temp}") # Debug print
+
 
     return jsonify(weather_data)
 
