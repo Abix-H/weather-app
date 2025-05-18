@@ -123,6 +123,8 @@ Make sure to create a .env file in the root directory and the weather-service di
 
 ## Contributions
 Ngo Tuan Kiet: Docker Setup, Weather API Service, History Service, CSV Export Service
+
 Abir Hida: Frontend, Weather API Service
+
 Niraj P.: User Aand Notification Service
 
