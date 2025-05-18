@@ -121,3 +121,8 @@ Make sure to create a .env file in the root directory and the weather-service di
 - [ ] use a real database for user-service
 - [ ] integrate user-service with history service (users should only be able to look up their own search history)
 
+## Contributions
+Ngo Tuan Kiet: Docker Setup, Weather API Service, History Service, CSV Export Service
+Abir Hida: Frontend, Weather API Service
+Niraj P.: User Aand Notification Service
+
